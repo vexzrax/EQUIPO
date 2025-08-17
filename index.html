@@ -6,71 +6,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- YouTube Player in background, hidden but audible -->
-    <div style="position:fixed; left:-9999px; top:-9999px;">
-        <div id="player"></div>
-    </div>
-
-    </style>
-</head>
-<body>
     <div class="container">
         <h1 class="title">¡CONOCE A NUESTRO GRUPO!</h1>
         <div class="button-group">
-            <button class="group-btn" onclick="openMember('sofia-moreno.html')">SOFIA MORENO</button>
-            <button class="group-btn" onclick="openMember('sofia-pedroza.html')">SOFIA PEDROZA</button>
-            <button class="group-btn" onclick="openMember('santiago-ortuño.html')">SANTIAGO ORTUÑO</button>
+            <button class="group-btn" onclick="location.href='sofia-moreno.html'">SOFIA MORENO</button>
+            <button class="group-btn" onclick="location.href='sofia-pedroza.html'">SOFIA PEDROZA</button>
+            <button class="group-btn" onclick="location.href='santiago-ortuño.html'">SANTIAGO ORTUÑO</button>
         </div>
-        <iframe id="member-frame"></iframe>
     </div>
     <!-- Música de YouTube (cambia VIDEOID por el ID real del video) -->
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/aGSKrC7dGcY?loop=1&autoplay=1&controls=0&start=0&playlist=aGSKrC7dGcY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; left: -9999px;"></iframe>
-    <script>
-        function openMember(page) {
-            var frame = document.getElementById('member-frame');
-            frame.src = page;
-            frame.style.display = 'block';
-        }
-    </script>
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/VIDEOID?loop=1&autoplay=1&controls=0&start=0&playlist=VIDEOID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
     <script src="main.js"></script>
-</body>
-        <div id="profile-content"></div>
-    </div>
-    <script src="main.js"></script>
-    <!-- Load YouTube API asynchronously -->
-    <script>
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                height: '0',
-                width: '0',
-                videoId: 'aGSKrC7dGcY',
-                playerVars: {
-                    'autoplay': 1,
-                    'loop': 1,
-                    'playlist': 'aGSKrC7dGcY',
-                    'controls': 0,
-                    'showinfo': 0,
-                    'modestbranding': 1,
-                    'mute': 0
-                },
-                events: {
-                    'onReady': function(e) { e.target.playVideo(); },
-                    'onStateChange': function(e) {
-                        // Loop manually if needed
-                        if (e.data === YT.PlayerState.ENDED) {
-                            e.target.seekTo(0);
-                            e.target.playVideo();
-                        }
-                    }
-                }
-            });
-        }
-    </script>
 </body>
 </html>
