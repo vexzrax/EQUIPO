@@ -15,7 +15,52 @@
         </div>
     </div>
     <!-- Música de YouTube (cambia VIDEOID por el ID real del video) -->
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/aGSKrC7dGcY&?loop=1&autoplay=1&controls=0&start=0&playlist=VIDEOID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/aGSKrC7dGcY?loop=1&autoplay=1&controls=0&start=0&playlist=aGSKrC7dGcY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
     <script src="main.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>Botón Reproducir Música</title>
+  <style>
+    .play-btn {
+      background-color: #e53935;
+      border: none;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      outline: none;
+      transition: background 0.2s;
+    }
+    .play-btn:hover {
+      background-color: #b71c1c;
+    }
+    .play-icon {
+      color: white;
+      font-size: 36px;
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Audio file (replace "cancion.mp3" with your music file's path) -->
+  <audio id="audio" src="cancion.mp3"></audio>
+
+  <!-- Play Button -->
+  <button class="play-btn" id="playBtn">
+    <span class="play-icon">&#9654;</span>
+  </button>
+
+  <script>
+    const playBtn = document.getElementById('playBtn');
+    const audio = document.getElementById('audio');
+
+    playBtn.addEventListener('click', () => {
+      audio.play();
+    });
+  </script>
 </body>
 </html>
