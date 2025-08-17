@@ -3,7 +3,64 @@ body {
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;
     min-height: 100vh;
+    /* Custom red cursor using a PNG image (downloaded from the provided link or host your own) */
+    cursor: url('https://www.rw-designer.com/cursor-extern.php?id=1263'), auto;
 }
+
+/* Blurry (Gaussian) red buttons styled like iOS, with hover blur effect and custom red cursor */
+
+/* Base button style */
+.button, button {
+    background: rgba(255, 0, 0, 0.5); /* Red with some transparency */
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    margin: 8px;
+    box-shadow: 0 4px 16px rgba(255,0,0,0.22);
+    backdrop-filter: blur(12px); /* Gaussian blur behind button */
+    -webkit-backdrop-filter: blur(12px);
+    transition: filter 0.3s, box-shadow 0.3s, background 0.3s;
+    position: relative;
+    cursor: inherit; /* Use the custom red cursor */
+}
+
+/* When hovering over any button, blur the others */
+.button-group:hover .button:not(:hover),
+.button-group:hover button:not(:hover) {
+    filter: blur(4px) grayscale(40%);
+    opacity: 0.7;
+}
+
+/* Hover state for selected button */
+.button:hover, button:hover {
+    filter: none;
+    background: rgba(255, 0, 0, 0.7);
+    box-shadow: 0 6px 24px rgba(255,0,0,0.35);
+    opacity: 1;
+}
+
+/* Optional: container for grouping buttons */
+.button-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+/* For accessibility, add focus style */
+.button:focus, button:focus {
+    outline: 2px solid #ff1744;
+}
+
+/* Example usage:
+<div class="button-group">
+  <button class="button">Botón 1</button>
+  <button class="button">Botón 2</button>
+  <button class="button">Botón 3</button>
+</div>
+*/
 
 .container {
     margin-top: 60px;
@@ -20,11 +77,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-.button-group {
-    display: flex;
-    gap: 32px;
-}
-
+/* Original group-btn left for legacy styles in case used elsewhere */
 .group-btn {
     font-family: 'Courier New', Courier, monospace;
     background: #e8002b;
@@ -39,7 +92,6 @@ body {
     transition: background 0.2s, filter 0.3s;
     outline: none;
 }
-
 .group-btn:hover,
 .group-btn:focus {
     background: #c90024;
