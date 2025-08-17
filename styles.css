@@ -1,0 +1,123 @@
+body {
+    background: #fff;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 50px;
+    letter-spacing: 0.5px;
+}
+
+.button-group {
+    display: flex;
+    gap: 32px;
+}
+
+.group-btn {
+    font-family: 'Courier New', Courier, monospace;
+    background: #e8002b;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 18px 36px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 32px 0 rgba(232,0,43,0.08);
+    filter: blur(0.5px) drop-shadow(0 0 12px rgba(232,0,43,0.25)) brightness(1.05);
+    transition: background 0.2s, filter 0.3s;
+    outline: none;
+}
+
+.group-btn:hover,
+.group-btn:focus {
+    background: #c90024;
+    filter: blur(1px) drop-shadow(0 0 20px rgba(232,0,43,0.27)) brightness(1.08);
+}
+
+.profile-page {
+    max-width: 840px;
+    margin: 60px auto 0 auto;
+    display: flex;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 48px 0 rgba(48,46,53,0.07);
+    overflow: hidden;
+}
+
+.profile-left {
+    flex: 0 0 300px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fafafa;
+    border-right: 1px solid #ececec;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 32px 0 rgba(232,0,43,0.13);
+}
+
+.shopping-list-title {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #e8002b;
+    margin-bottom: 12px;
+}
+
+.shopping-list {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: #222;
+    padding-left: 16px;
+    margin-bottom: 0;
+}
+
+.profile-right {
+    flex: 1;
+    padding: 48px 40px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+.lorem-text {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.05rem;
+    color: #313131;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 950px) {
+    .profile-page {
+        flex-direction: column;
+        max-width: 98vw;
+    }
+    .profile-left, .profile-right {
+        border-right: none;
+        border-bottom: 1px solid #ececec;
+        padding: 24px 12px;
+    }
+    .profile-left {
+        align-items: center;
+    }
+}
